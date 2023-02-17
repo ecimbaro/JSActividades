@@ -140,13 +140,12 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:  
-  usuario.amigos.push[nuevoAmigo];
+  usuario.amigos.push(nuevoAmigo);
 
   return usuario;
   }
  
 console.log(agregarAmigo(usuario, "edu"));
-
 
 
 function pasarUsuarioAPremium(usuarios) {
@@ -197,7 +196,7 @@ function agregarMetodoCalculoDescuento(producto) {
   }
   return producto;
 }
-  
+
 
 const producto = {
   precio : 20,
