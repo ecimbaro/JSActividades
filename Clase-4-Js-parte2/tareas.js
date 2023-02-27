@@ -26,10 +26,7 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  return{
-    property : null,
- }
-  
+  objeto[property] = null;
  }
 console.log(agregarPropiedad())
 
@@ -38,16 +35,17 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  invocarMetodo.metodo()
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  return {
-    numeroMisterioso : Math.random () * 5,
-  }
+
+    objetoMisterioso.numeroMisterioso * 5;
+    return{numeroMisterioso};
+  
 }
   console.log(multiplicarNumeroDesconocidoPorCinco())
 
@@ -57,7 +55,7 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-delete["unaPropiedad"];
+delete objeto[unaPropiedad];
 return(objeto);
 }
 console.log(eliminarPropiedad());
@@ -67,9 +65,9 @@ function nuevoUsuario(nombre, email, password) {
   // Devuelve el objeto
   // Tu código:
 const nuevoObjeto = {
-  nombre,
-  email,
-  password,
+  nombre : nombre,
+  email : email,
+  password : password,
 
 }
 return(nuevoObjeto);
@@ -112,27 +110,21 @@ function verificarPassword(usuario, password) {
   // De lo contrario, devuelve "false"
   // // Tu código:
 
- if (usuario.hasOwnProperty(password)){return (true)}
+ if (password === usuario.password){return (true)}
  else {return(false)}
 }
-
-const usuario = {
-  password : "contraseña",
-}
-
-
 
 function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
 
-usuario["password"] = "nuevagPassword";
+usuario["password"] = nuevaPassword;
 
 return usuario
 
 }
-console.log(actualizarPassword(usuario, "nuevagPassword"))
+
 
 
 function agregarAmigo(usuario, nuevoAmigo) {
